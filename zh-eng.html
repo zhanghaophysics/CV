@@ -1,341 +1,1164 @@
-﻿<html xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
-<meta http-equiv="Content-Language" content="zh-cn">
-<title>Hao Zhang</title>
-<style type="text/css">
-.style1 {text-align: center}
-.style2 {text-align: left; background:gray; height:35px; text-indent:15px; text-decoration: underline; padding:5px 0px 0px 0px; width:1000px}
-.styletext {text-align: justify; text-justify: inter-ideograph; text-indent: -18px; line-height: 150%; margin-left: 18px; margin-bottom: 8px;width:1000px}
-.styletext1 {color:#414141;font-size = 35px; font-family:"Times New Roman", Times, serif}  
-.T1 {text-align: center; background: #EBEBEB; width:200px; height:40px; border: 1px; border-color: #D1D1D1;border-style:solid}
-.T2 {text-align: center; background: white; width:400px; height:40px; border: 1px; border-color: #D1D1D1;border-style:solid}
-.T3 {text-align: center; background: white; width:200px; height:40px; border: 1px; border-color: #D1D1D1;border-style:solid}
-.T4 {text-align: center; background: white; width:200px; height:40px; border: 1px; border-color: #D1D1D1;border-style:solid}
-.T5 {text-align: center; background: white; width:750px; height:40px; border: 1px; border-color: #D1D1D1;border-style:solid}		  	
-.style13 {
-				width: 1000px;
-}
-			
-.style14 {
-				text-align: center;
-				height: 5 px;
-				border-bottom-width: 1px;
-				padding-bottom: 1px;
-}
-.button {
-				background-color:silver;width:100px;border-style:solid;border-width:3px;border-color:gray; height:37px;text-align:center;padding-top:5px
-}
-.content {
-				height: 16px;
-				width: 500px;
-				float: left;
-}						
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hao Zhang | Academic Homepage</title>
+  <style>
+    :root {
+      --bg: #f7f7f4;
+      --paper: #fffefb;
+      --paper-2: #fcfbf8;
+      --ink: #1e2f4f;
+      --ink-soft: #44536d;
+      --muted: #69768c;
+      --line: #d9dde4;
+      --line-soft: #eaedf1;
+      --navy: #223c68;
+      --navy-2: #304e82;
+      --shadow: 0 18px 40px rgba(34, 60, 104, 0.08);
+      --content: 1240px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 10px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Georgia", "Times New Roman", serif;
+      background:
+        linear-gradient(180deg, rgba(34, 60, 104, 0.04) 0, rgba(34, 60, 104, 0.04) 1px, transparent 1px, transparent 160px),
+        radial-gradient(circle at top right, rgba(176, 138, 74, 0.08), transparent 18%),
+        linear-gradient(180deg, #faf9f5 0%, #f5f5f0 100%);
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--content), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(250, 249, 245, 0.9);
+      border-bottom: 1px solid rgba(34, 60, 104, 0.08);
+    }
+
+    .topbar-inner {
+      width: min(var(--content), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 24px 0 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+    }
+
+    .brand strong,
+    .hero-name,
+    .section-title,
+    .card-title {
+      font-family: "Cormorant Garamond", "Georgia", serif;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 1.55rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+
+    .brand span {
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .nav a {
+      position: relative;
+      padding: 6px 2px;
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+    }
+
+    .nav a:first-child {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .nav a:first-child::after,
+    .nav a:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 2px;
+      background: var(--navy);
+    }
+
+    .hero {
+      padding: 44px 0 18px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(380px, 0.98fr);
+      gap: 38px;
+      align-items: start;
+    }
+
+    .hero-left {
+      padding: 28px 8px 0 4px;
+    }
+
+    .hero-name {
+      margin: 0;
+      font-size: clamp(3.5rem, 7vw, 5.2rem);
+      line-height: 1;
+      letter-spacing: 0.08em;
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .hero-english {
+      margin-top: 18px;
+      font-family: "Cormorant Garamond", "Georgia", serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      letter-spacing: 0.18em;
+      color: var(--navy-2);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .hero-intro {
+      margin: 26px 0 30px;
+      max-width: 42em;
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+    }
+
+    .identity-list {
+      width: min(100%, 620px);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .identity-row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 18px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .identity-row:last-child {
+      border-bottom: 0;
+    }
+
+    .identity-row span {
+      color: var(--ink-soft);
+      font-weight: 600;
+    }
+
+    .identity-row strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .hero-card {
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid rgba(34, 60, 104, 0.1);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-visual {
+      position: relative;
+      height: 260px;
+      background:
+        radial-gradient(circle at 84% 18%, rgba(255, 255, 255, 0.14), transparent 10%),
+        radial-gradient(circle at 18% 80%, rgba(79, 158, 255, 0.14), transparent 18%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 48%),
+        linear-gradient(145deg, #0c1930 0%, #17345d 52%, #21467d 100%);
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 10px),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 10px);
+      opacity: 0.38;
+    }
+
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: 18px 20px auto auto;
+      width: 104px;
+      height: 104px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.14) 0 1px, transparent 2px),
+        radial-gradient(circle at 50% 50%, transparent 0 32%, rgba(255, 255, 255, 0.12) 33%, transparent 34%),
+        radial-gradient(circle at 50% 50%, transparent 0 49%, rgba(255, 255, 255, 0.1) 50%, transparent 51%);
+      opacity: 0.65;
+    }
+
+    .optics-chip,
+    .optics-path,
+    .optics-label,
+    .optics-node,
+    .optics-pulse {
+      position: absolute;
+      z-index: 1;
+    }
+
+    .optics-chip {
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      background: rgba(247, 249, 255, 0.08);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    }
+
+    .chip-source { left: 26px; top: 112px; width: 56px; height: 26px; border-radius: 8px; }
+    .chip-splitter { left: 132px; top: 102px; width: 18px; height: 18px; transform: rotate(45deg); border-radius: 3px; }
+    .chip-delay { left: 164px; top: 34px; width: 82px; height: 18px; border-radius: 999px; }
+    .chip-lens { left: 248px; top: 78px; width: 16px; height: 56px; border-radius: 999px; }
+    .chip-sample { right: 72px; top: 110px; width: 20px; height: 60px; border-radius: 8px; }
+    .chip-detector { right: 22px; top: 104px; width: 34px; height: 72px; border-radius: 10px; }
+
+    .optics-path {
+      height: 4px;
+      border-radius: 999px;
+      transform-origin: left center;
+      box-shadow: 0 0 12px currentColor;
+    }
+
+    .path-seed { left: 82px; top: 122px; width: 56px; color: rgba(255, 219, 120, 0.95); background: currentColor; }
+    .path-pump-a { left: 142px; top: 110px; width: 70px; color: rgba(255, 166, 97, 0.92); background: currentColor; transform: rotate(-46deg); }
+    .path-pump-b { left: 212px; top: 62px; width: 132px; color: rgba(255, 166, 97, 0.92); background: currentColor; }
+    .path-probe-a { left: 144px; top: 122px; width: 108px; color: rgba(107, 202, 255, 0.96); background: currentColor; }
+    .path-probe-b { left: 262px; top: 122px; width: 106px; color: rgba(107, 202, 255, 0.96); background: currentColor; }
+    .path-detect { left: 368px; top: 140px; width: 42px; color: rgba(255, 255, 255, 0.88); background: currentColor; }
+
+    .optics-node {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+    }
+
+    .node-split { left: 138px; top: 116px; }
+    .node-sample { left: 366px; top: 136px; background: rgba(255, 243, 184, 0.94); box-shadow: 0 0 12px rgba(255, 215, 120, 0.78); }
+
+    .optics-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(240, 244, 255, 0.86);
+      font-weight: 700;
+      z-index: 2;
+    }
+
+    .label-source { left: 22px; top: 146px; }
+    .label-delay { left: 170px; top: 16px; }
+    .label-pump { left: 254px; top: 48px; color: rgba(255, 201, 139, 0.96); }
+    .label-probe { left: 218px; top: 132px; color: rgba(164, 226, 255, 0.98); }
+    .label-sample { right: 62px; top: 176px; }
+    .label-detector { right: 18px; top: 84px; }
+
+    .optics-pulse {
+      left: 324px;
+      top: 134px;
+      width: 26px;
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(255, 189, 99, 0.2), rgba(255, 255, 255, 0.98), rgba(111, 204, 255, 0.2));
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+    }
+
+    .hero-card-body {
+      padding: 26px 28px 30px;
+    }
+
+    .eyebrow,
+    .section-subtitle,
+    .small-label {
+      font-family: "Georgia", serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy-2);
+    }
+
+    .eyebrow {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .hero-card h2 {
+      margin: 0 0 10px;
+      font-family: "Cormorant Garamond", "Georgia", serif;
+      font-size: 2rem;
+      line-height: 1.25;
+      color: var(--ink);
+    }
+
+    .hero-card p {
+      margin: 0 0 18px;
+      color: var(--ink-soft);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink-soft);
+      background: var(--paper-2);
+      font-size: 0.92rem;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(34, 60, 104, 0.12), rgba(34, 60, 104, 0.02));
+      margin: 20px 0 28px;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: 220px repeat(4, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.38);
+    }
+
+    .research-header,
+    .research-item {
+      padding: 30px 22px;
+    }
+
+    .research-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid var(--line-soft);
+    }
+
+    .section-title {
+      margin: 0 0 6px;
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      line-height: 1.12;
+      color: var(--navy);
+    }
+
+    .section-subtitle {
+      margin: 0;
+      font-size: 0.98rem;
+      font-weight: 700;
+    }
+
+    .title-mark {
+      width: 56px;
+      height: 2px;
+      background: var(--navy-2);
+      margin-top: 18px;
+    }
+
+    .research-item {
+      border-right: 1px solid var(--line-soft);
+    }
+
+    .research-item:last-child {
+      border-right: 0;
+    }
+
+    .research-icon {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 16px;
+      position: relative;
+      color: var(--navy);
+    }
+
+    .icon-wave::before,
+    .icon-wave::after,
+    .icon-hex::before,
+    .icon-node::before,
+    .icon-stack::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+
+    .icon-wave::before {
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      transform: scale(0.88);
+    }
+
+    .icon-wave::after {
+      border-top: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      border-radius: 50%;
+      inset: 12px 4px;
+    }
+
+    .icon-hex::before {
+      clip-path: polygon(25% 7%, 75% 7%, 100% 50%, 75% 93%, 25% 93%, 0 50%);
+      border: 2px solid currentColor;
+      background: linear-gradient(currentColor, currentColor) center/2px 70% no-repeat;
+    }
+
+    .icon-node::before {
+      background:
+        radial-gradient(circle, currentColor 0 2px, transparent 3px) 10% 30%/100% 100% no-repeat,
+        radial-gradient(circle, currentColor 0 2px, transparent 3px) 50% 10%/100% 100% no-repeat,
+        radial-gradient(circle, currentColor 0 2px, transparent 3px) 84% 34%/100% 100% no-repeat,
+        radial-gradient(circle, currentColor 0 2px, transparent 3px) 20% 78%/100% 100% no-repeat,
+        radial-gradient(circle, currentColor 0 2px, transparent 3px) 60% 84%/100% 100% no-repeat,
+        linear-gradient(currentColor, currentColor) 28% 38%/46% 1px no-repeat,
+        linear-gradient(currentColor, currentColor) 20% 64%/42% 1px no-repeat,
+        linear-gradient(currentColor, currentColor) 52% 58%/30% 1px no-repeat,
+        linear-gradient(currentColor, currentColor) 36% 24%/1px 50% no-repeat;
+      opacity: 0.9;
+    }
+
+    .icon-stack::before {
+      background:
+        linear-gradient(currentColor, currentColor) center 20%/80% 2px no-repeat,
+        linear-gradient(currentColor, currentColor) center 50%/80% 2px no-repeat,
+        linear-gradient(currentColor, currentColor) center 80%/80% 2px no-repeat;
+      transform: perspective(100px) rotateX(60deg);
+    }
+
+    .research-item h3,
+    .panel h3 {
+      margin: 0 0 10px;
+      font-size: 1.35rem;
+      color: var(--navy);
+    }
+
+    .research-item p,
+    .panel p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+    }
+
+    main section {
+      padding: 30px 0;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .section-block {
+      min-width: 0;
+    }
+
+    .left-column {
+      display: grid;
+      gap: 28px;
+      min-width: 0;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 26px;
+      margin-top: 26px;
+      border-left: 1px solid var(--line);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 28px 18px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -32px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--navy);
+      box-shadow: 0 0 0 4px rgba(34, 60, 104, 0.08);
+    }
+
+    .timeline-date {
+      display: block;
+      color: var(--ink-soft);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .timeline-item h4 {
+      margin: 0 0 4px;
+      font-size: 1.08rem;
+      color: var(--ink);
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .timeline-note {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(34, 60, 104, 0.09);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel-body {
+      padding: 28px;
+    }
+
+    .plain-panel {
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    .plain-panel .panel-body {
+      padding: 0;
+    }
+
+    .plain-panel .list-card {
+      padding: 0;
+      margin-bottom: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .card-title {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      line-height: 1.15;
+      color: var(--navy);
+    }
+
+    .pub-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .more-link {
+      color: var(--navy);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .pub-list {
+      display: grid;
+      gap: 22px;
+    }
+
+    .pub-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding-bottom: 18px;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .pub-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .pub-index {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .pub-item h4 {
+      margin: 0 0 8px;
+      font-size: 1.18rem;
+      line-height: 1.55;
+      color: var(--ink);
+    }
+
+    .pub-item h4 a:hover {
+      color: var(--navy-2);
+    }
+
+    .pub-meta {
+      color: var(--ink-soft);
+      font-size: 0.97rem;
+    }
+
+    .pub-note {
+      display: block;
+      margin-top: 6px;
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .list-card {
+      padding: 18px 18px 16px;
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.66);
+      margin-bottom: 14px;
+    }
+
+    .list-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .list-card strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .list-card span {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      padding: 28px 0 40px;
+    }
+
+    .footer-inner {
+      width: min(var(--content), calc(100% - 40px));
+      margin: 0 auto;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .two-column,
+      .grid-two,
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .research-header,
+      .research-item {
+        border-right: 0;
+        border-top: 1px solid var(--line-soft);
+      }
+
+      .research-header {
+        border-top: 0;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container,
+      .topbar-inner,
+      .footer-inner {
+        width: min(var(--content), calc(100% - 24px));
+      }
+
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        gap: 14px 18px;
+      }
+
+      .hero {
+        padding-top: 26px;
+      }
+
+      .hero-left {
+        padding-top: 0;
+      }
+
+      .hero-name {
+        font-size: 3rem;
+        letter-spacing: 0.06em;
+      }
+
+      .hero-english {
+        font-size: 1.8rem;
+      }
+
+      .identity-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .panel-body,
+      .hero-card-body {
+        padding: 22px 20px;
+      }
+
+      .hero-visual {
+        height: 210px;
+      }
+
+      .pub-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+  </style>
 </head>
-<body bgcolor="#FFFFFF" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0">
-<!-- ####################################################################################################### -->
-<div align="center">
-	<table border="0" width="1000" height="130" bgcolor="#FFFFFF">
-			 <td style="width: 1000px; height: 80px;">
-			 <div class="style14">
-					<br>
-					<br> 
-					<br> 			 
-	<div id="head">
-		<div align="left" class="content">
-			<div align="left"; style="height:80px"; style="width:250px">
-				<p>
-					<font color= #414141 face= 'Times New Roman', Times, serif><font size= "7">                                                                          
-					<b>张&nbsp; 昊 </b> </font>
-					<br>
-					<font color= #414141 face= 'Times New Roman', Times, serif><font size= "6">   
-					<b>Hao Zhang</b>                                                                                           
-					</font>
-				</p>	
-			</div>
-		</div>
-		<div class="content">
-			<div style="padding-left:300px" style="padding-top:2px">
-				<a href="index.html"><h1 class="button"><font color="white" face="'Times New Roman', Times, serif" size="5"><b>中文</b></font></h1></a>
-			</div>
-		</div>			
-</div>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <strong>Hao Zhang Academic Homepage</strong>
+        <span>Nanjing University of Posts and Telecommunications · Electronic and Optical Engineering</span>
+      </div>
+      <nav class="nav">
+        <a href="#top">Home</a>
+        <a href="#about">Profile</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#innovation">Patents &amp; Honors</a>
+        <a href="index.html">中文</a>
+      </nav>
+    </div>
+  </header>
 
-<!-- ####################################################################################################### -->
-				<div id="photo" align="center">					
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<hr> 
-						<!-- <img src="members/zh.jpg"><br>
-				</div>
-					<br>
-					<br>
-<!-- ####################################################################################################### -->	
-			 		<table class="style13">
-			 			<tbody>
-			 	     	     <tr>
-                            	<th class="T1">Hometown</th>
-                                <th class="T5">JiangSu Province,&nbsp;&nbsp;P.R.China</th>
-						    </tr>
-			 			     <tr>
-                            	<th class="T1">Major</th>
-                                <th class="T5">Physics</th>
-						    </tr>			 			     <tr>
-                            	<th class="T1">Research</th>
-                                <th class="T5">Plasmonics; Perovskite Nanolaser</th>
-						    </tr>
-                            <tr>
-                            	<th class="T1">E-mail</th>
-                                <th class="T5">
-								<font size="4" face="'Times New Roman', Times, serif"><a href="mailto:xuqingyu@seu.edu.cn"style=" text-decoration: none"><span style="color:#000000">zhanghaophysics@hotmail.com</span></a></font></th>
-						    </tr>
-			 			</tbody>
-                        </table>
-<!-- ####################################################################################################### -->
-               		<h2 class="style2"><font color="white"><font face= 'Times New Roman', Times, serif>Education</font></h2>
-               		 <table class="style13">
-						<tbody>
-                            <tr>
-                            	<th class="T1">Date</th>
-                                <th class="T2">University</th>
-                                <th class="T3">Degree</th>
-                                <th class="T3">Tutor</th>
-						    </tr>
-        
-                            <tr>
-                            	<th class="T1">2011.9-2015.6</th>
-                                <th class="T2">JiangSu Second normal University</th>
-                                <th class="T3">Bachelor</th>
-                                <th class="T3">Qin Chen，Jilian Li etc </th>
-						    </tr>
-						    <tr>
-                            	<th class="T1">2015.9-2018.6</th>
-                                <th class="T2">Southeast University</th>
-  								<th class="T3">Master</th>
-                                <th class="T3">Shuai Dong, Qingyu Xu</th>
-						    </tr>	
-						    <tr>
-                            	<th class="T1">2020.3-</th>
-                                <th class="T2">University of Otago (New Zealand)</th>
-  								<th class="T3">PhD (Full Scholarship)</th>
-                                <th class="T3">Boyang Ding, Richard Blaikie</th>
-						    </tr>						    
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-left">
+            <h1 class="hero-name">Hao Zhang</h1>
+            <div class="hero-english">Academic Profile</div>
+            <p class="hero-intro">
+              Hao Zhang is a faculty member at the School of Electronic and Optical Engineering, Nanjing University of Posts and Telecommunications. His research focuses on plasmonic hot electrons, ultrafast spectroscopy, inorganic perovskite devices, and AI-assisted scientific research, with continued interest in interdisciplinary advances across optoelectronic materials and device physics.
+            </p>
 
-			 </tbody>
-			 </table> 
-<!-- ####################################################################################################### -->
-               		<h2 class="style2"><font color="white"><font face="Times New Roman">Profession</font></h2>
-               		 <table class="style13">
-						<tbody>
-                            <tr>
-                            	<th class="T1">Date</th>
-                                <th class="T2">Company</th>
-                                <th class="T3">Position</th>
-                                <th class="T3">Supervisor</th>
-						    </tr>
-        
-                            <tr>
-                            	<th class="T1">2019.10-2020.2</th>
-                                <th class="T2">University of Otago (New Zealand)</th>
-                                <th class="T3">Research Asistant (RA)</th>
-                                <th class="T3">Boyang Ding, Richard Blaikie </th>
-						    </tr>							  
+            <div class="identity-list">
+              <div class="identity-row">
+                <span>Position</span>
+                <strong>Tenure-track Associate Professor</strong>
+              </div>
+              <div class="identity-row">
+                <span>Research</span>
+                <strong>Plasmonic Hot Electrons · Ultrafast Spectroscopy · Inorganic Perovskite Devices · AI-Assisted Research</strong>
+              </div>
+              <div class="identity-row">
+                <span>Email</span>
+                <strong><a href="mailto:hao.zhang@njupt.edu.cn">hao.zhang@njupt.edu.cn</a></strong>
+              </div>
+              <div class="identity-row">
+                <span>Affiliation</span>
+                <strong>Nanjing University of Posts and Telecommunications · School of Electronic and Optical Engineering</strong>
+              </div>
+            </div>
+          </div>
 
-			 </tbody>
-			 </table> 
-<!-- ####################################################################################################### -->
-<h2 class="style2"><font color="white"><font face="Times New Roman">Publications</font>
+          <article class="hero-card">
+            <div class="hero-visual" aria-hidden="true">
+              <div class="optics-chip chip-source"></div>
+              <div class="optics-chip chip-splitter"></div>
+              <div class="optics-chip chip-delay"></div>
+              <div class="optics-chip chip-lens"></div>
+              <div class="optics-chip chip-sample"></div>
+              <div class="optics-chip chip-detector"></div>
+              <div class="optics-path path-seed"></div>
+              <div class="optics-path path-pump-a"></div>
+              <div class="optics-path path-pump-b"></div>
+              <div class="optics-path path-probe-a"></div>
+              <div class="optics-path path-probe-b"></div>
+              <div class="optics-path path-detect"></div>
+              <div class="optics-node node-split"></div>
+              <div class="optics-node node-sample"></div>
+              <div class="optics-pulse"></div>
+              <span class="optics-label label-source">Laser</span>
+              <span class="optics-label label-delay">Delay Line</span>
+              <span class="optics-label label-pump">Pump</span>
+              <span class="optics-label label-probe">Probe</span>
+              <span class="optics-label label-sample">Sample</span>
+              <span class="optics-label label-detector">Detector</span>
+            </div>
+            <div class="hero-card-body">
+              <div class="eyebrow">Research Focus</div>
+              <h2>Plasmonic Hot Electrons, Ultrafast Spectroscopy &amp; AI-Assisted Research</h2>
+              <p>His work centers on device physics, energy transport, ultrafast process characterization, and data-driven analysis, with particular emphasis on plasmonic hot electrons, inorganic perovskite devices, and AI-enabled research workflows.</p>
+              <div class="tag-list">
+                <span class="tag">Plasmonic Hot Electrons</span>
+                <span class="tag">Ultrafast Spectroscopy</span>
+                <span class="tag">Inorganic Perovskite Devices</span>
+                <span class="tag">AI-Assisted Research</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<tr><td style="padding-left: 8px; padding-right: 8px; padding-top: 4px; padding-bottom: 4px" width="100%" colspan="3">                                                                                                                                                                                                                                                                                                                                                                                               
-<font class="styletext1"> 
+    <section id="research">
+      <div class="container">
+        <div class="research-grid">
+          <div class="research-header">
+            <h2 class="section-title">Research Areas</h2>
+            <p class="section-subtitle">Current Directions</p>
+            <div class="title-mark"></div>
+          </div>
 
-<p class=styletext>                                                                        
-<b><a href="https://aip.scitation.org/doi/10.1063/5.0088233"style="text-decoration:none"><span class="styletext1">9.Bifacial omnidirectional and band-tunable light absorption in free-standing core–shell resonators</span></a></b>
-<br><b><u>Hao. Zhang</b></u>, Fengjiang Liu, Richard J. Blaikie, Boyang Ding*, Min Qiu*<br> 
-<b><i>Applied Physics Letters. </i></b>2101175 (2022) 	
-	
-<p class=styletext>                                                                        
-<b><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/adom.202101175"style="text-decoration:none"><span class="styletext1">8.High-Stability Patterned CsPbI<sub>x</sub>Br<sub>3−x</sub> Thin Films with Tunable Crystal Size Prepared by Solid-Phase Reaction</span></a></b>
-<br>Xuan Jin, Shixin Song, Zhe Liu, Hong Wang, Bao Wang, Jie Guan, <b><u>Hao. Zhang*</b></u>, Qingyu Xu*<br> 
-<b><i>Advanced Optical Materials. </i></b>2101175 (2021) 
+          <div class="research-item">
+            <div class="research-icon icon-wave"></div>
+            <h3>Plasmonic Hot Electrons</h3>
+            <p>Studying plasmon excitation, hot-electron generation, and interfacial energy transport mechanisms.</p>
+          </div>
 
-<p class=styletext>                                                                        
-<b><a href="https://pubs.acs.org/doi/10.1021/acsaem.9b00130"style="text-decoration:none"><span class="styletext1">7.Pulsed Laser Deposition of CsPbBr<sub>3</sub> Films for Application in Perovskite Solar Cells</span></a></b>
-<br>Hong Wang, Yu Wu, Meiyang Ma, Shuai Dong, Qi Li, Jun Du, <b><u>Hao. Zhang*</b></u>, Qingyu Xu*<br> 
-<b><i>ACS Applied Energy Materials. </i></b>2, 3, 2305-2312 (2019)  
+          <div class="research-item">
+            <div class="research-icon icon-hex"></div>
+            <h3>Ultrafast Spectroscopy</h3>
+            <p>Using time-resolved ultrafast measurements to probe excited-state evolution, carrier dynamics, and energy relaxation processes.</p>
+          </div>
 
-<p class=styletext>                                                                        
-<b><a href="https://www.sciencedirect.com/science/article/pii/S0925838818334637?via%3Dihub"style="text-decoration:none"><span class="styletext1">6.Influence of drying temperature on morphology of MAPbI<sub>3</sub> thin films and the performance of solar cells</span></a></b>
-<br><b><u>Hao. Zhang</u></b>, Yalan Wang, Hong Wang, Meiyang Ma, Shuai Dong* and Qingyu Xu*                                                                   
-<b><i><br> Journal of Alloys and Compounds. </i></b>773, 511-518 (2019)                                                                                                                                                                                     
+          <div class="research-item">
+            <div class="research-icon icon-node"></div>
+            <h3>Inorganic Perovskite Devices</h3>
+            <p>Focusing on thin-film engineering, structural design, and performance optimization of inorganic perovskite optoelectronic devices.</p>
+          </div>
 
-<p class=styletext>                                                                     
-<b><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/solr.201800097"style=" text-decoration: none"><span class="styletext1">5.Application of compact TiO<sub>2</sub> layer fabricated by pulsed laser deposition in organometal trihalide perovskite solar cells</span></a></b>
-<br><b><u>Hao. Zhang</u></b>, Hong Wang, Meiyang Ma, Yu Wu, Shuai Dong* and Qingyu Xu*                                                                   
-<b><i><br>Solar RRL. </i></b>2, 1800097 (2018)                                                                                                                                                                                        
+          <div class="research-item">
+            <div class="research-icon icon-stack"></div>
+            <h3>AI-Assisted Research</h3>
+            <p>Exploring AI-supported workflows for information synthesis, experimental analysis, and academic writing assistance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<p class=styletext>                                                                         
-<b><a href="https://doi.org/10.1038/s41598-017-09109-0"style=" text-decoration: none"><span class="styletext1">4.Preparation of CH<sub>3</sub>NH<sub>3</sub>PbI<sub>3</sub> thin films with tens of micrometer scale at high temperature</span></a></b><br>
-<b><u>H. Zhang</u></b>, M. Tao, B.-Z. Gao, W. Chen, Q. Li, Qingyu Xu* and S. Dong*                                                                    
-<b><i><br>Scientific Reports. </i></b>7, 8458 (2017)                                                                                             
+    <section id="about">
+      <div class="container">
+        <div class="two-column">
+          <div class="left-column">
+            <div class="section-block">
+              <h2 class="section-title">Education &amp; Employment</h2>
+              <p class="section-subtitle">Academic Journey</p>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <span class="timeline-date">2025 - Present</span>
+                  <h4>Nanjing University of Posts and Telecommunications · Tenure-track Associate Professor</h4>
+                  <p>School of Electronic and Optical Engineering</p>
+                </div>
+                <div class="timeline-item">
+                  <span class="timeline-date">2024 - 2025</span>
+                  <h4>Nanjing University of Posts and Telecommunications · Lecturer</h4>
+                  <p>School of Electronic and Optical Engineering</p>
+                </div>
+                <div class="timeline-item">
+                  <span class="timeline-date">2024 - Present</span>
+                  <h4>Nanjing University · Part-time Engineer</h4>
+                  <p>College of Modern Engineering and Applied Sciences</p>
+                </div>
+                <div class="timeline-item">
+                  <span class="timeline-date">2019 - 2024</span>
+                  <h4>University of Otago, New Zealand · PhD Candidate</h4>
+                  <p>
+                    <span class="timeline-note">Department of Physics</span>
+                    <span class="timeline-note">Supervisor: Richard J. Blaikie</span>
+                  </p>
+                </div>
+                <div class="timeline-item">
+                  <span class="timeline-date">2015 - 2018</span>
+                  <h4>Southeast University · Master's Student</h4>
+                <p>
+                  <span class="timeline-note">School of Physics</span>
+                  <span class="timeline-note">Supervisors: Shuai Dong, Qingyu Xu</span>
+                  <span class="timeline-note">Jiangsu Provincial Outstanding Master's Thesis (2019)</span>
+                  <span class="timeline-note">Outstanding Graduate Thesis (2018)</span>
+                  <span class="timeline-note">National Scholarship for Graduate Students (2017)</span>
+                </p>
+              </div>
+                <div class="timeline-item">
+                  <span class="timeline-date">2011 - 2015</span>
+                  <h4>Jiangsu Second Normal University · Bachelor's Student</h4>
+                  <p>
+                    School of Physics and Electronic Engineering
+                    <span class="timeline-note">Outstanding Undergraduate Thesis (2015)</span>
+                    <span class="timeline-note">National Encouragement Scholarship (2014)</span>
+                  </p>
+                </div>
+              </div>
+            </div>
 
-<p class=styletext>                                                                     
-<b><a href="http://iopscience.iop.org/article/10.1088/1361-6528/ab00b4/meta"style=" text-decoration: none"><span class="styletext1">3.Ultrasonic exfoliated ReS<sub>2</sub> nanosheets: fabrication and use as co-catalyst for enhancing photocatalytic efficiency of TiO2 nanoparticles under sunlight</span></a></b><br>
-Qihua Jing, <b><u>Hao. Zhang</u></b>, Hao Huang, Xingce Fan, Yumeng Zhang, Xiangyu Hou, Qingyu Xu, Zhenhua Ni*, Teng Qiu*                                                                    
-<b><i><br>Nanotechnology. </i></b>30, 184001 (2019)                                                                                                                                                                                     
+            <article class="panel plain-panel section-block">
+              <div class="panel-body">
+                <h2 class="card-title">Academic Service</h2>
+                <p class="section-subtitle">Editorial Role</p>
+                <div class="divider"></div>
+                <div class="list-card">
+                  <strong>Guest Editor, <em>Coatings</em> (2026)</strong>
+                </div>
+              </div>
+            </article>
+          </div>
 
-<p class=styletext>                                                                         
-<b><a href="https://pubs.rsc.org/en/Content/ArticleLanding/2018/TA/C7TA09646A#!divAbstract"style=" text-decoration: none"><span class="styletext1">2.Post-healing of defects: an alternative way for passivation of carbon-based mesoscopic perovskite solar cells via hydrophobic ligand coordination</span></a></b><br>
-Guangguang Huang, Chunlei Wang*, <b><u>Hao. Zhang</u></b>, Shuhong Xu,Qingyu Xu* and Yiping Cui*                                                                    
-<b><i><br>Journal of Materials Chemistry A. </i></b>6, 2449. (2018)
+          <div class="section-block" id="publications">
+            <div class="pub-head">
+              <div>
+                <h2 class="section-title">Selected Publications</h2>
+                <p class="section-subtitle">Representative Papers</p>
+              </div>
+              <a class="more-link" href="https://doi.org/10.1002/smll.73935" target="_blank" rel="noreferrer">Open PDF →</a>
+            </div>
 
-<p class=styletext>                                                                    
-<b><a href="https://pubs.rsc.org/en/content/articlepdf/2017/ra/c7ra11007c"style=" text-decoration: none"><span class="styletext1">1.Ferromagnetic photocatalysts of FeTiO<sub>3</sub>–Fe<sub>2</sub>O<sub>3</sub> nanocomposites</span></a></b><br>
-Baizhi Gao, Caiping Yang, Jun Chen, Yuxing Ma, Jiachen Xie, <b><u>H. Zhang</u></b>, Lujun Wei, Qi Li*, Jun Du* and Qingyu Xu*                                                                    
-<b><i><br>RSC Advance. </i></b>7, 54594. (2017)
-                                                                                            
-</font>
-<br>
-<!-- ####################################################################################################### -->
-			<tr><td class="style1" style="width: 850px; height: 26px;">
-			 <div class="style1">
-				<h2 class="style2"><font color="white"><font face= 'Times New Roman', Times, serif>Patents</font>    
-				<tr> 
-			    <td style="padding: 4px 8px; height: 175px;" width="100%" colspan="3">   
+            <div class="pub-list">
+              <article class="pub-item">
+                <div class="pub-index">1</div>
+                <div>
+                  <h4><a href="https://doi.org/10.1002/smll.73935" target="_blank" rel="noreferrer">Pulsed Laser Deposited CsPbBr<sub>3</sub> Perovskite Solar Cells Achieving 10.71% Efficiency With Exceptional Long-Term Stability via Target Engineering</a></h4>
+                  <div class="pub-meta">Xingjian Fan, <strong>Hao Zhang</strong>, Xinyu Lu, Tao Zhou, Fang Liu, Xueqing Chang, Guangyu Wang, Mohsin Ijaz, Richard J. Blaikie, Jing Chen, Michele Saba, Qingyu Xu. <strong><em>Small</em></strong>, 2026.<span class="pub-note">Co-first Author &amp; Corresponding Author</span></div>
+                </div>
+              </article>
+              <article class="pub-item">
+                <div class="pub-index">2</div>
+                <div>
+                  <h4><a href="https://doi.org/10.3390/coatings16070751" target="_blank" rel="noreferrer">Subwavelength Mode (De)multiplexer Based on Sodium-Assisted Hybrid Plasmonics</a></h4>
+                  <div class="pub-meta">Yuyang Zhuang, Xintong Li, Zhiyuan Sun, Weixi Lu, <strong>Hao Zhang</strong>. <strong><em>Coatings</em></strong>, 2026.<span class="pub-note">Corresponding Author</span></div>
+                </div>
+              </article>
+              <article class="pub-item">
+                <div class="pub-index">3</div>
+                <div>
+                  <h4><a href="https://doi.org/10.1039/d4nr04356a" target="_blank" rel="noreferrer">Realizing zero-threshold population inversion via plasmonic doping</a></h4>
+                  <div class="pub-meta">Mohsin Ijaz, <strong>Hao Zhang</strong>, Isabella Wagner, Fengjiang Liu, Margarita Samoli, Zeger Hens, Pieter Geiregat, Justin M. Hodgkiss, Richard J. Blaikie, Boyang Ding, Yu-Hui Chen, Kai Chen, Min Qiu. <strong><em>Nanoscale</em></strong>, 2025.<span class="pub-note">Co-first Author</span></div>
+                </div>
+              </article>
+              <article class="pub-item">
+                <div class="pub-index">4</div>
+                <div>
+                  <h4><a href="file:///G:/科研/成果/SCI文章/2023-FOP/fop-21328-of-zhanghao.pdf" target="_blank" rel="noreferrer">Recent review of surface plasmons and plasmonic hot electron effects in metallic nanostructures</a></h4>
+                  <div class="pub-meta"><strong>Hao Zhang</strong>, Mohsin Ijaz, Richard J. Blaikie. <strong><em>Frontiers of Physics</em></strong>, 2023.<span class="pub-note">First Author</span></div>
+                </div>
+              </article>
+              <article class="pub-item">
+                <div class="pub-index">5</div>
+                <div>
+                  <h4><a href="file:///G:/科研/成果/SCI文章/2023-APL-Solar%20cells%20(NiOx)/092103_1_5.0156462.pdf" target="_blank" rel="noreferrer">Highly stable all-inorganic CsPbBr<sub>3</sub> perovskite solar cells based on pulsed laser deposition</a></h4>
+                  <div class="pub-meta">Qianglin Song, <strong>Hao Zhang</strong>, Xuan Jin, Hong Wang, Peng Wang, Mohsin Ijaz, Qingyu Xu. <strong><em>Applied Physics Letters</em></strong>, 2023.<span class="pub-note">Co-first Author &amp; Corresponding Author</span></div>
+                </div>
+              </article>
+              <article class="pub-item">
+                <div class="pub-index">6</div>
+                <div>
+                  <h4><a href="file:///G:/科研/成果/SCI文章/2023-APL-Plasmonic%20photodetectors/发表版本.pdf" target="_blank" rel="noreferrer">Breaking bandgap limitation: Improved photosensitization in plasmonic-based CsPbBr<sub>3</sub> photodetectors via hot-electron injection</a></h4>
+                  <div class="pub-meta">Conghui Qiu, <strong>Hao Zhang</strong>, Chengcai Tian, Xuan Jin, Qianglin Song, Liye Xu, Mohsin Ijaz, Richard J. Blaikie, Qingyu Xu. <strong><em>Applied Physics Letters</em></strong>, 2023.<span class="pub-note">Co-first Author &amp; Corresponding Author</span></div>
+                </div>
+              </article>
+              <article class="pub-item">
+                <div class="pub-index">7</div>
+                <div>
+                  <h4><a href="file:///G:/科研/成果/SCI文章/2023-APL-Hydrogen/053901_1_5.0157677.pdf" target="_blank" rel="noreferrer">Plasmonically coupled semiconductor quantum dots for efficient hydrogen photoelectrocatalysis</a></h4>
+                  <div class="pub-meta">Mohsin Ijaz, <strong>Hao Zhang</strong>, Sanutep V. Chan, Robert Holt, Nathaniel J. L. K. Davis, Richard J. Blaikie. <strong><em>Applied Physics Letters</em></strong>, 2023.<span class="pub-note">Co-first Author</span></div>
+                </div>
+              </article>
+              <article class="pub-item">
+                <div class="pub-index">8</div>
+                <div>
+                  <h4><a href="file:///G:/科研/成果/SCI文章/2023-APL-Gratings/APL-pdf.pdf" target="_blank" rel="noreferrer">Angle-resolved and time-resolved spectroscopic study on large-area silver gratings fabricated via optical interference lithography</a></h4>
+                  <div class="pub-meta">Mohsin Ijaz, <strong>Hao Zhang</strong>, Liye Xu, Richard J. Blaikie. <strong><em>Applied Physics Letters</em></strong>, 2023.<span class="pub-note">Co-first Author &amp; Corresponding Author</span></div>
+                </div>
+              </article>
+              <article class="pub-item">
+                <div class="pub-index">9</div>
+                <div>
+                  <h4><a href="file:///G:/科研/成果/SCI文章/2022-APL/Zhang%20et%20al.%20-%202022%20-%20Bifacial%20omnidirectional%20and%20band-tunable%20light%20absorption%20in%20free-standing%20core%E2%80%93shell%20resonators.pdf" target="_blank" rel="noreferrer">Bifacial omnidirectional and band-tunable light absorption in free-standing core-shell resonators</a></h4>
+                  <div class="pub-meta"><strong>Hao Zhang</strong>, Fengjiang Liu, Richard J. Blaikie, et al. <strong><em>Applied Physics Letters</em></strong>, 2022.<span class="pub-note">First Author</span></div>
+                </div>
+              </article>
+              <article class="pub-item">
+                <div class="pub-index">10</div>
+                <div>
+                  <h4><a href="file:///G:/科研/成果/SCI文章/2021-AOM/Jin%20et%20al.%20-%202021%20-%20High%E2%80%90Stability%20Patterned%20CsPbIxBr3%E2%88%92x%20Thin%20Films%20with%20Tunable%20Crystal%20Size%20Prepared%20by%20Solid%E2%80%90Phase%20Reaction.pdf" target="_blank" rel="noreferrer">High-Stability Patterned CsPbI<sub>x</sub>Br<sub>3−x</sub> Thin Films with Tunable Crystal Size Prepared by Solid-Phase Reaction</a></h4>
+                  <div class="pub-meta">Xuan Jin, Shixin Song, Zhe Liu, Hong Wang, Bao Wang, Jie Guan, <strong>Hao Zhang</strong>, Qingyu Xu. <strong><em>Advanced Optical Materials</em></strong>, 2021.<span class="pub-note">Corresponding Author</span></div>
+                </div>
+              </article>
+              <article class="pub-item">
+                <div class="pub-index">11</div>
+                <div>
+                  <h4><a href="file:///G:/科研/成果/SCI文章/文章文件/Acs%20AEM-2019.pdf" target="_blank" rel="noreferrer">Pulsed Laser Deposition of CsPbBr<sub>3</sub> Films for Application in Perovskite Solar Cells</a></h4>
+                  <div class="pub-meta">Hong Wang, Yu Wu, Meiyang Ma, Shuai Dong, Qi Li, Jun Du, <strong>Hao Zhang</strong>, Qingyu Xu. <strong><em>ACS Applied Energy Materials</em></strong>, 2019.<span class="pub-note">Corresponding Author</span></div>
+                </div>
+              </article>
+              <article class="pub-item">
+                <div class="pub-index">12</div>
+                <div>
+                  <h4><a href="file:///G:/科研/成果/SCI文章/文章文件/Jac-2019.pdf" target="_blank" rel="noreferrer">Influence of drying temperature on morphology of MAPbI<sub>3</sub> thin films and the performance of solar cells</a></h4>
+                  <div class="pub-meta"><strong>Hao Zhang</strong>, Yalan Wang, Hong Wang, Meiyang Ma, Shuai Dong, Qingyu Xu. <strong><em>Journal of Alloys and Compounds</em></strong>, 2019.<span class="pub-note">First Author</span></div>
+                </div>
+              </article>
+              <article class="pub-item">
+                <div class="pub-index">13</div>
+                <div>
+                  <h4><a href="file:///G:/科研/成果/SCI文章/文章文件/solr.201800097.pdf" target="_blank" rel="noreferrer">Application of Compact TiO<sub>2</sub> Layer Fabricated by Pulsed Laser Deposition in Organometal Trihalide Perovskite Solar Cells</a></h4>
+                  <div class="pub-meta"><strong>Hao Zhang</strong>, Hong Wang, Meiyang Ma, Yu Wu, Shuai Dong, Qingyu Xu. <strong><em>Solar RRL</em></strong>, 2018.<span class="pub-note">First Author</span></div>
+                </div>
+              </article>
+              <article class="pub-item">
+                <div class="pub-index">14</div>
+                <div>
+                  <h4><a href="file:///G:/科研/成果/SCI文章/文章文件/Scientific%20Reports-2017.pdf" target="_blank" rel="noreferrer">Preparation of CH<sub>3</sub>NH<sub>3</sub>PbI<sub>3</sub> thin films with tens of micrometer scale at high temperature</a></h4>
+                  <div class="pub-meta"><strong>Hao Zhang</strong>, Mian Tao, Baizhi Gao, Wei Chen, Qi Li, Qingyu Xu, Shuai Dong. <strong><em>Scientific Reports</em></strong>, 2017.<span class="pub-note">First Author</span></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<font class="styletext1">
+    <section id="projects">
+      <div class="container">
+        <article class="panel">
+          <div class="panel-body">
+            <h2 class="card-title">Research Projects</h2>
+            <p class="section-subtitle">Principal Investigator</p>
+            <div class="divider"></div>
+            <div class="grid-two">
+              <div class="list-card">
+                <strong>National Natural Science Foundation of China, Young Scientists Fund</strong>
+                <span>PI: Plasmonic hot-electron injection for low-threshold optical gain in quantum dots · Funded in 2024</span>
+              </div>
+              <div class="list-card">
+                <strong>Nanjing Selected Support Program for Returned Overseas Scholars in Science and Technology Innovation</strong>
+                <span>PI: Enhanced hydrogen-production applications via plasmonic light-matter strong coupling · Funded in 2025</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-<p class="styletext">                                                                                                                                                                                                        
-<b>9.A method for fabrication of CsPbI<sub>x</sub>Br<sub>3−x</sub> photoluminence thin films</b><br>
-Inventor:  Qingyu Xu, <b><u>Hao Zhang</u></b>, Xuan Jin, Hong Wang, Shuai Dong                                                                  
-<b><br>China Patent NO.<i> 201910863625.3 </i></b>   
+    <section id="innovation">
+      <div class="container">
+        <div class="grid-two">
+          <article class="panel">
+            <div class="panel-body">
+              <h2 class="card-title">Patents</h2>
+              <p class="section-subtitle">Selected Intellectual Property</p>
+              <div class="divider"></div>
+              <div class="list-card">
+                <strong>A two-step laser sputtering method for fabricating CsPbI<sub>x</sub>Br<sub>3−x</sub> luminescent thin films (Invention Patent)</strong>
+                <span>ZL 201910863625.3</span>
+              </div>
+              <div class="list-card">
+                <strong>A pulsed-laser sputtering method for preparing CsPbBr<sub>3</sub> thin films (Invention Patent)</strong>
+                <span>ZL 201710933312.1</span>
+              </div>
+              <div class="list-card">
+                <strong>A vertical atmosphere reactor with dual heat sources (Invention Patent)</strong>
+                <span>ZL 201710062952.X</span>
+              </div>
+              <div class="list-card">
+                <strong>A two-step method for preparing methylammonium lead iodide perovskite thin films (Invention Patent)</strong>
+                <span>ZL 201610160754.2</span>
+              </div>
+              <div class="list-card">
+                <strong>A lead-oxide thin-film route to methylammonium lead iodide perovskite thin films (Invention Patent)</strong>
+                <span>ZL 201610215006.X</span>
+              </div>
+              <div class="list-card">
+                <strong>Utility-model patents related to intelligent power-saving systems, storage cabinets, and human-body sensors</strong>
+                <span>Including ZL 201620622363.3, ZL 201420413822.8, ZL 201520173232.7, and ZL 201420659867.3</span>
+              </div>
+            </div>
+          </article>
 
-<p class="styletext">                                                                                                                                                                                                        
-<b>8.A method for fabrication of CsPbBr<sub>3</sub> thin films by pulsed laser deposition</b><br>
-Inventor:  Qingyu Xu, <b><u>Hao Zhang</u></b>, Meiyang Ma, Hong Wang, Shuai Dong                                                                  
-<b><br>China Patent NO.<i> 201710933312.1 </i></b>   
+          <article class="panel">
+            <div class="panel-body">
+              <h2 class="card-title">Honors &amp; Activities</h2>
+              <p class="section-subtitle">Awards &amp; Presentations</p>
+              <div class="divider"></div>
+              <div class="list-card">
+                <strong>International EIPBN Conference Oral Presentation (2021)</strong>
+              </div>
+              <div class="list-card">
+                <strong>New Zealand Dodd-Walls Centre Forum Poster (2022)</strong>
+              </div>
+              <div class="list-card">
+                <strong>Inaugural New Zealand Hydrogen Forum (NZHS-1) Poster (2023)</strong>
+              </div>
+              <div class="list-card">
+                <strong>APS March Meeting Oral Presentation (2023)</strong>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
 
-                                                                                    
-&nbsp;<p class="styletext">                                                                                                                                                                                                        
-<b>7.A vertical vapor furnace with double heat sources</b><br>
-Inventor:  Qingyu Xu, <b><u>Hao Zhang</u></b>, Shuai Dong                                                                  
-<b><br>China Patent NO.<i> 201710062952.X</i></b>                                                                                                                                                                                   
-
-                                                                                                                                                                                                  
-<p class="styletext">                                                                                                                                                                                                         
-<b>6.A new two-step method for fabrication of CH<sub>3</sub>NH<sub>3</sub>PbI<sub>3</sub> thin films</b><br>
-Inventor: Qingyu Xu, Kai Zhu, <b><u>Hao Zhang</u></b>, Qi Fan, Shuai Dong                                                                   
-<b><br>China Patent NO.<i>  201610160754.2 </i></b>                                                                                                                                                                                    
-
-<p class="styletext">                                                                         
-<b>5.A new fabrication method of CH<sub>3</sub>NH<sub>3</sub>PbI<sub>3</sub> thin films with lead oxide thin films</b><br>
-Inventor: Qingyu Xu, Kai Zhu, <b><u>Hao Zhang</u></b>, Jiasheng Wang, Qi Fan, Shuai Dong                                                                                        
-<b><br>China Patent NO.<i>  201610215006.X </i></b>                                                                                        
-                                                                                        
-<p class="styletext">                                                                                                                                                                                                               
-<b>4.Intelligent power saving system based on Internet of things technology</b><br>
-Inventor:  <b><u>Hao Zhang</u></b>, Kun Cheng, Yongwang Sun, Kangqian He, Zhe Ji, Qin Chen, Jilian Li                                                                   
-<b><br>China Patent NO.<i>  201620622363.3 </i></b>                                                                                                                                                                                   
-
-<p class="styletext">                                                                                                                                                                                                               
-<b>3.A new humanized intelligent storage cabinet</b><br>
-Inventor:  Zhikang Pei, <b><u>Hao Zhang</u></b>, Qin Chen                                                                   
-<b><br>China Patent NO.<i>  201420413822.8 </i></b>  
-
-<p class="styletext">                                                                                                                                                                                                               
-<b>2.A human body image contrast sensor based on serial camera</b><br>
-Inventor:  <b><u>Hao Zhang</u></b>, Zhikang Pei, Jilian Li, Zhouyu Wang                                                                   
-<b><br>China Patent NO.<i>  201520173232.7   </i></b>  
-
-<p class="styletext">                                                                                                                                                                                                               
-<b>1.A wireless indoor intelligent power saving system</b><br>
-Inventor:  <b><u>Hao Zhang</u></b>, Guangsheng Lu, Zhikang Pei                                                                  
-<b><br>China Patent NO.<i>  201420659867.3  </i></b>  
-                                                                                      
-<br>
-<!-- ####################################################################################################### -->
-			<tr><td class="style1" style="height: 50px">
-			 <div class="style1">
-				<h2 class="style2"><font color="white"><font face= 'Times New Roman', Times, serif>Awards</font>    
-				<tr>
-			     
-<td>  
-<font class="styletext1">  
-
-<p class=styletext>                                                                                                                              
-<b>10.Full Scholarship of University of Otago (2020)</b>
-
-<p class=styletext>                                                                                                                              
-<b>9.Jiangsu Province Outstanding Master Graduation Thesis (2019)</b>
-
-<p class=styletext>                                                                                                                              
-<b>8.Outstanding Master Graduation Thesis of Southeast University (2019)</b>
-
-<p class=styletext>                                                                                                                           
-<b>7.PhD Fellowship for abroad Study of China Scholar Council (CSC) (2018)</b>
-
-<p class=styletext>                                                                                                                              
-<b>6.National Scholarships (2017)</b>                                                                                                                                             
-
-<p class=styletext>                                                                                                                               
-<b>5.Outstanding Bachelor Graduation Thesis of JiangSu Second normal University (2015)</b> 
-
-<p class=styletext>                                                                                                                               
-<b>4.Merit student of JiangSu Second normal University (2015)</b> 
-                                                                                                                                           
-<p class=styletext>
-<b>3.First-class Scholarship (2015)</b>
-   
-<p class=styletext>                                                                                                                               
-<b>2.National Encouragement Scholarship (2013)</b>                                                                                                                                            
-
-<p class=styletext>                                                                                                                               
-<b>1.Outstanding Broadcaster of JiangSu Second normal University (2014)</b>                                                                                                                                           
-
-</font>                                                                                                                                             
-<!-- ####################################################################################################### -->
-			<tr><td class="style1" style="height: 50px">
-			 <div class="style1">
-				<h2 class="style2"><font color="white"><font face= 'Times New Roman', Times, serif>Conferences</font>    
-				<tr>
-			     
-<td>  
-<font class="styletext1">
-
-<p class=styletext>                                                                                                                       
-<b>5. Dodd-Walls Centre (DWC) Syposium (New Zealand)&nbsp;&nbsp;&nbsp;&nbsp; Poster</b>
-  	
-<p class=styletext>                                                                                                                       
-<b>4. Electron, Ion, Photon Beams and Nanofabrication (EIPBN) Conference&nbsp;&nbsp;&nbsp;&nbsp; Oral</b>
-  
-<p class=styletext>                                                                                                                       
-<b>3. 3th Graduate Forum in School of Physics, Southeast University&nbsp;&nbsp;&nbsp;&nbsp; Excellence Graduate Award</b>
-
-<p class=styletext>                                                                                                                              
-<b>2. 2017 Chinese Materials Research Society (CMRS)&nbsp;&nbsp;&nbsp;&nbsp; Poster
-</b>                                                                                                                                             
-
-<p class=styletext>                                                                                                                               
-<b>1. 2014 Jiangsu province student research training program exhibition&nbsp;&nbsp;&nbsp;&nbsp; Oral & Poster 
-</b>                                                                                                                                            
-
-</table>		
-</div>
-<br>
-<br>
-<br>
-<!-- ####################################################################################################### -->
-<div style= text-align:center;background-color:silver>
-  <div id="copyright">
-    <p>Copyright &copy; 2019 - All Rights Reserved - Hao Zhang</p>
-  </div>
-</div>
-
-
-
+  <footer>
+    <div class="footer-inner">
+      Copyright © 2019 - 2026 Hao Zhang. English academic profile aligned with the current Chinese homepage.
+    </div>
+  </footer>
 </body>
-
 </html>
